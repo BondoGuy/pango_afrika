@@ -1,19 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pango_afrika/views/modules/tourisme/widgets/product_detail_page.dart';
 import 'package:pango_afrika/views/modules/tourisme/widgets/size_config.dart';
 
-import '../../../../models/Categories.dart';
+
 import 'app_styles.dart';
 
-class PlacesScreens extends StatefulWidget {
+class PlacesScreens extends StatelessWidget {
   const PlacesScreens({super.key});
 
-  @override
-  State<PlacesScreens> createState() => _PlacesScreensState();
-}
-
-class _PlacesScreensState extends State<PlacesScreens> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +28,9 @@ class _PlacesScreensState extends State<PlacesScreens> {
                   children: [
                     Expanded(
                       child: TextField(
-                        style: kRalewayRegular.copyWith(
-                          color: kBlack,
-                          fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                        style: GoogleFonts.oswald(
+                          color: Theme.of(context).cardColor,
+                          //fontSize: SizeConfig.blockSizeHorizontal! * 3,
                         ),
                         controller: TextEditingController(),
                         decoration: InputDecoration(
@@ -57,7 +53,7 @@ class _PlacesScreensState extends State<PlacesScreens> {
                           enabledBorder: kInputBorder,
                           hintStyle: kRalewayRegular.copyWith(
                             color: kGrey85,
-                            fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                            //fontSize: SizeConfig.blockSizeHorizontal! * 3,
                           ),
                           filled: true,
                           fillColor: kWhiteF7,
@@ -65,7 +61,7 @@ class _PlacesScreensState extends State<PlacesScreens> {
                       ),
                     ),
                     SizedBox(
-                      width: SizeConfig.blockSizeHorizontal! * 4,
+                      //width: SizeConfig.blockSizeHorizontal! * 4,
                     ),
                     Container(
                       height: 49,
@@ -155,14 +151,14 @@ class _PlacesScreensState extends State<PlacesScreens> {
                       'Nos recommandations',
                       style: kRalewayMedium.copyWith(
                         color: kBlack,
-                        fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                        //fontSize: SizeConfig.blockSizeHorizontal! * 4,
                       ),
                     ),
                     Text(
                       'Voir plus',
                       style: kRalewayRegular.copyWith(
                         color: kGrey85,
-                        fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
+                        fontSize: 16,
                       ),
                     ),
                   ],
@@ -267,9 +263,7 @@ class _PlacesScreensState extends State<PlacesScreens> {
                                                 '1.8 km',
                                                 style: kRalewayRegular.copyWith(
                                                   color: kWhite,
-                                                  fontSize: SizeConfig
-                                                      .blockSizeHorizontal! *
-                                                      2.5,
+                                                  fontSize: 16
                                                 ),
                                               )
                                             ],
@@ -282,26 +276,21 @@ class _PlacesScreensState extends State<PlacesScreens> {
                                       CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Dreamsville House',
+                                          'Rond point Deido',
                                           style: kRalewayMedium.copyWith(
                                             color: kWhite,
-                                            fontSize: SizeConfig
-                                                .blockSizeHorizontal! *
-                                                4,
+                                            fontSize: 16,
                                           ),
                                         ),
                                         SizedBox(
                                           height:
-                                          SizeConfig.blockSizeVertical! *
-                                              0.5,
+                                          5
                                         ),
                                         Text(
-                                          'Jl. Sultan Iskandar Muda',
+                                          'Douala, Cameroun',
                                           style: kRalewayRegular.copyWith(
                                             color: kWhite,
-                                            fontSize: SizeConfig
-                                                .blockSizeHorizontal! *
-                                                2.5,
+                                            fontSize: 16
                                           ),
                                         )
                                       ],
@@ -331,14 +320,14 @@ class _PlacesScreensState extends State<PlacesScreens> {
                       'Decouvertes',
                       style: kRalewayMedium.copyWith(
                         color: kBlack,
-                        fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                        //fontSize: SizeConfig.blockSizeHorizontal! * 4,
                       ),
                     ),
                     Text(
                       'voir plus',
                       style: kRalewayRegular.copyWith(
                         color: kGrey85,
-                        fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
+                        fontSize: 16,
                       ),
                     ),
                   ],
@@ -386,7 +375,7 @@ class _PlacesScreensState extends State<PlacesScreens> {
                             ),
                           ),
                           SizedBox(
-                            width: SizeConfig.blockSizeHorizontal! * 4.5,
+                            width: 5
                           ),
                           Expanded(
                             child: Column(
@@ -394,22 +383,21 @@ class _PlacesScreensState extends State<PlacesScreens> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Orchad House',
+                                  'Douala',
                                   style: kRalewayMedium.copyWith(
                                     color: kBlack,
-                                    fontSize:
-                                    SizeConfig.blockSizeHorizontal! * 4,
+                                   fontSize:16
                                   ),
                                 ),
                                 SizedBox(
-                                  height: SizeConfig.blockSizeVertical! * 0.5,
+                                  //height: SizeConfig.blockSizeVertical! * 0.5,
                                 ),
                                 Text(
-                                  'Rp. 2.500.000.000 / Year',
+                                  'Cameroun',
                                   style: kRalewayRegular.copyWith(
                                     color: kBlue,
-                                    fontSize:
-                                    SizeConfig.blockSizeHorizontal! * 2.5,
+                                    fontSize: 12
+                                    //SizeConfig.blockSizeHorizontal! * 2.5,
                                   ),
                                 ),
                                 Expanded(
@@ -418,49 +406,41 @@ class _PlacesScreensState extends State<PlacesScreens> {
                                       Row(
                                         children: [
                                           SvgPicture.asset(
-                                            'assets/icones/icon_bedroom.svg',
+                                            'assets/icones/security-pin_6125244.png',
                                           ),
                                           SizedBox(
-                                            width: SizeConfig
-                                                .blockSizeHorizontal! *
-                                                0.5,
+                                            width: 5
                                           ),
                                           Text(
-                                            '6 Bedroom',
+                                            '1 km',
                                             style: kRalewayRegular.copyWith(
                                               color: kGrey85,
-                                              fontSize: SizeConfig
-                                                  .blockSizeHorizontal! *
-                                                  2.5,
+                                              fontSize: 12
                                             ),
                                           ),
                                         ],
                                       ),
                                       SizedBox(
                                         width:
-                                        SizeConfig.blockSizeHorizontal! * 1,
+                                        10
                                       ),
-                                      Row(
-                                        children: [
-                                          SvgPicture.asset(
-                                            'assets/icones/icon_bathroom.svg',
-                                          ),
-                                          SizedBox(
-                                            width: SizeConfig
-                                                .blockSizeHorizontal! *
-                                                0.5,
-                                          ),
-                                          Text(
-                                            '4 Bathroom',
-                                            style: kRalewayRegular.copyWith(
-                                              color: kGrey85,
-                                              fontSize: SizeConfig
-                                                  .blockSizeHorizontal! *
-                                                  2.5,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
+                                      // Row(
+                                      //   children: [
+                                      //     SvgPicture.asset(
+                                      //       'assets/icones/icon_bathroom.svg',
+                                      //     ),
+                                      //     SizedBox(
+                                      //       width: 5
+                                      //     ),
+                                      //     Text(
+                                      //       '4 Bathroom',
+                                      //       style: kRalewayRegular.copyWith(
+                                      //         color: kGrey85,
+                                      //         fontSize: 16
+                                      //       ),
+                                      //     ),
+                                      //   ],
+                                      // ),
                                     ],
                                   ),
                                 ),

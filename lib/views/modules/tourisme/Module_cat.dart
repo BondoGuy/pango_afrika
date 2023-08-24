@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:pango_afrika/views/modules/tourisme/widgets/lieux.dart';
-import 'package:pango_afrika/views/modules/tourisme/widgets/product_detail_page.dart';
-import 'package:pango_afrika/views/products/items.dart';
 import 'package:pango_afrika/widgets/big_text.dart';
 
 import '../../../models/Categories.dart';

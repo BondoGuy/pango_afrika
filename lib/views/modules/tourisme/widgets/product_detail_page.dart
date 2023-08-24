@@ -136,18 +136,13 @@ class ProductDetailPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              GestureDetector(
-                                onTap: (){
-                                  Get.back;
-                                },
-                                child: CircleAvatar(
-                                  radius: 17,
-                                  backgroundColor: kBlack.withOpacity(0.24),
-                                  child: SvgPicture.asset(
-                                    'assets/icones/icon_arrow_back.svg',
-                                  ),
-                                ),
-                              ),
+                              // CircleAvatar(
+                              //   radius: 17,
+                              //   backgroundColor: kBlack.withOpacity(0.24),
+                              //   child: SvgPicture.asset(
+                              //     'assets/icones/icon_arrow_back.svg',
+                              //   ),
+                              // ),
                               CircleAvatar(
                                 radius: 17,
                                 backgroundColor: kBlack.withOpacity(0.24),
@@ -161,7 +156,7 @@ class ProductDetailPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Dreamsville House',
+                                'CHUTE D\'EAUX',
                                 style: kRalewaySemibold.copyWith(
                                   color: kWhite,
                                   fontSize:
@@ -172,7 +167,7 @@ class ProductDetailPage extends StatelessWidget {
                                 height: SizeConfig.blockSizeVertical! * 0.5,
                               ),
                               Text(
-                                'Jl. Sultan Iskandar Muda, Jakarta selatan',
+                                '18 km',
                                 style: kRalewayRegular.copyWith(
                                   color: kWhite,
                                   fontSize: SizeConfig.blockSizeHorizontal! * 3,
@@ -206,8 +201,9 @@ class ProductDetailPage extends StatelessWidget {
                                         width: SizeConfig.blockSizeHorizontal! *
                                             2.5,
                                       ),
+                                      Icon(Icons.star, color: Colors.orange,),
                                       Text(
-                                        '6 Bedroom',
+                                        '6 etoiles',
                                         style: kRalewayRegular.copyWith(
                                           color: kWhite,
                                           fontSize:
@@ -245,7 +241,7 @@ class ProductDetailPage extends StatelessWidget {
                                             2.5,
                                       ),
                                       Text(
-                                        '4 Bathroom',
+                                        'Douala',
                                         style: kRalewayRegular.copyWith(
                                           color: kWhite,
                                           fontSize:

@@ -88,7 +88,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     Container(
                       //height: MediaQuery.of(context).size.height/7,
-                      height:115,
+                      height:100,
                       width: MediaQuery.of(context).size.width/1,
                     decoration: BoxDecoration(
                       boxShadow: [BoxShadow(

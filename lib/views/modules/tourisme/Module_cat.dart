@@ -3,8 +3,8 @@ import 'package:get/get.dart';
 import 'package:pango_afrika/views/products/items.dart';
 import 'package:pango_afrika/widgets/big_text.dart';
 
-import '../../models/Categories.dart';
-import '../../utils/colors.dart';
+import '../../../models/Categories.dart';
+import '../../../utils/colors.dart';
 
 
 

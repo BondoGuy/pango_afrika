@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:pango_afrika/views/modules/tourisme/widgets/lieux.dart';
+import 'package:pango_afrika/views/modules/tourisme/widgets/product_detail_page.dart';
 import 'package:pango_afrika/views/products/items.dart';
 import 'package:pango_afrika/widgets/big_text.dart';
 
@@ -8,9 +11,14 @@ import '../../../utils/colors.dart';
 
 
 
-class TourismeCategories extends StatelessWidget {
+class TourismeCategories extends StatefulWidget {
   const TourismeCategories({super.key});
 
+  @override
+  State<TourismeCategories> createState() => _TourismeCategoriesState();
+}
+
+class _TourismeCategoriesState extends State<TourismeCategories> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +32,7 @@ class TourismeCategories extends StatelessWidget {
         padding: const EdgeInsets.only(top: 40),
         child: GestureDetector(
           onTap: (){
-            Get.to(ItemsScreen());
+            Get.to(PlacesScreens());
             print('pressed');
           },
           child: Padding(

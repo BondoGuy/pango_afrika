@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_home_rent_app/app_styles.dart';
-import 'package:flutter_home_rent_app/size_config.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:readmore/readmore.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:pango_afrika/views/modules/tourisme/widgets/size_config.dart';
+
+import 'app_styles.dart';
 
 class ProductDetailPage extends StatelessWidget {
   const ProductDetailPage({Key? key}) : super(key: key);
@@ -12,72 +14,75 @@ class ProductDetailPage extends StatelessWidget {
     SizeConfig().init(context);
 
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: kPadding8,
-        ),
-        height: 43,
-        width: double.infinity,
-        margin: const EdgeInsets.symmetric(
-          horizontal: kPadding20,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Price',
-                    style: kRalewayRegular.copyWith(
-                      color: kGrey85,
-                      fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
-                    ),
-                  ),
-                  SizedBox(
-                    height: SizeConfig.blockSizeVertical! * 0.5,
-                  ),
-                  Text(
-                    'Rp. 2.500.000.000 / Year',
-                    style: kRalewayMedium.copyWith(
-                      color: kBlack,
-                      fontSize: SizeConfig.blockSizeHorizontal! * 4,
-                    ),
-                  )
-                ],
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                debugPrint('Rent Now Tapped');
-              },
-              child: Container(
-                height: 43,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(
-                    kBorderRadius10,
-                  ),
-                  gradient: kLinearGradientBlue,
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: kPadding24,
-                ),
-                child: Center(
-                  child: Text(
-                    'Rent Now',
-                    style: kRalewaySemibold.copyWith(
-                      color: kWhite,
-                      fontSize: SizeConfig.blockSizeHorizontal! * 4,
-                    ),
-                  ),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
+      appBar: AppBar(),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      // floatingActionButton: Container(
+      //   padding:  EdgeInsets.symmetric(
+      //     horizontal: kPadding8,
+      //   ),
+      //   height: 43,
+      //   width: double.infinity,
+      //   margin: const EdgeInsets.symmetric(
+      //     horizontal: kPadding20,
+      //   ),
+      //   child: Row(
+      //     children: [
+      //       Expanded(
+      //         child: SingleChildScrollView(
+      //           child: Column(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             mainAxisAlignment: MainAxisAlignment.center,
+      //             children: [
+      //               Text(
+      //                 'Price',
+      //                 style: kRalewayRegular.copyWith(
+      //                   color: kGrey85,
+      //                   fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
+      //                 ),
+      //               ),
+      //               SizedBox(
+      //                 height: SizeConfig.blockSizeVertical! * 0.5,
+      //               ),
+      //               Text(
+      //                 'Rp. 2.500.000.000 / Year',
+      //                 style: kRalewayMedium.copyWith(
+      //                   color: kBlack,
+      //                   fontSize: SizeConfig.blockSizeHorizontal! * 4,
+      //                 ),
+      //               )
+      //             ],
+      //           ),
+      //         ),
+      //       ),
+      //       GestureDetector(
+      //         onTap: () {
+      //           debugPrint('Rent Now Tapped');
+      //         },
+      //         child: Container(
+      //           height: 43,
+      //           decoration: BoxDecoration(
+      //             borderRadius: BorderRadius.circular(
+      //               kBorderRadius10,
+      //             ),
+      //             gradient: kLinearGradientBlue,
+      //           ),
+      //           padding: const EdgeInsets.symmetric(
+      //             horizontal: kPadding24,
+      //           ),
+      //           child: Center(
+      //             child: Text(
+      //               'Rent Now',
+      //               style: kRalewaySemibold.copyWith(
+      //                 color: kWhite,
+      //                 fontSize: SizeConfig.blockSizeHorizontal! * 4,
+      //               ),
+      //             ),
+      //           ),
+      //         ),
+      //       )
+      //     ],
+      //   ),
+      // ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
@@ -131,18 +136,23 @@ class ProductDetailPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              CircleAvatar(
-                                radius: 17,
-                                backgroundColor: kBlack.withOpacity(0.24),
-                                child: SvgPicture.asset(
-                                  'assets/icon_arrow_back.svg',
+                              GestureDetector(
+                                onTap: (){
+                                  Get.back;
+                                },
+                                child: CircleAvatar(
+                                  radius: 17,
+                                  backgroundColor: kBlack.withOpacity(0.24),
+                                  child: SvgPicture.asset(
+                                    'assets/icones/icon_arrow_back.svg',
+                                  ),
                                 ),
                               ),
                               CircleAvatar(
                                 radius: 17,
                                 backgroundColor: kBlack.withOpacity(0.24),
                                 child: SvgPicture.asset(
-                                  'assets/icon_bookmark.svg',
+                                  'assets/icones/icon_bookmark.svg',
                                 ),
                               ),
                             ],
@@ -189,7 +199,7 @@ class ProductDetailPage extends StatelessWidget {
                                         padding:
                                             const EdgeInsets.all(kPadding4),
                                         child: SvgPicture.asset(
-                                          'assets/icon_bedroom_white.svg',
+                                          'assets/icones/icon_bedroom_white.svg',
                                         ),
                                       ),
                                       SizedBox(
@@ -227,7 +237,7 @@ class ProductDetailPage extends StatelessWidget {
                                         padding:
                                             const EdgeInsets.all(kPadding4),
                                         child: SvgPicture.asset(
-                                          'assets/icon_bathroom_white.svg',
+                                          'assets/icones/icon_bathroom_white.svg',
                                         ),
                                       ),
                                       SizedBox(
@@ -272,102 +282,102 @@ class ProductDetailPage extends StatelessWidget {
               const SizedBox(
                 height: kPadding24,
               ),
-              ReadMoreText(
-                'The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars',
-                trimLines: 2,
-                trimMode: TrimMode.Line,
-                delimiter: '...',
-                trimCollapsedText: 'Show More',
-                trimExpandedText: 'Show Less',
-                style: kRalewayRegular.copyWith(
-                  color: kGrey85,
-                  fontSize: SizeConfig.blockSizeHorizontal! * 3,
-                ),
-                moreStyle: kRalewayRegular.copyWith(
-                  color: kBlue,
-                  fontSize: SizeConfig.blockSizeHorizontal! * 3,
-                ),
-                lessStyle: kRalewayRegular.copyWith(
-                  color: kBlue,
-                  fontSize: SizeConfig.blockSizeHorizontal! * 3,
-                ),
-              ),
+              // ReadMoreText(
+              //   'The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars',
+              //   trimLines: 2,
+              //   trimMode: TrimMode.Line,
+              //   delimiter: '...',
+              //   trimCollapsedText: 'Show More',
+              //   trimExpandedText: 'Show Less',
+              //   style: kRalewayRegular.copyWith(
+              //     color: kGrey85,
+              //     fontSize: SizeConfig.blockSizeHorizontal! * 3,
+              //   ),
+              //   moreStyle: kRalewayRegular.copyWith(
+              //     color: kBlue,
+              //     fontSize: SizeConfig.blockSizeHorizontal! * 3,
+              //   ),
+              //   lessStyle: kRalewayRegular.copyWith(
+              //     color: kBlue,
+              //     fontSize: SizeConfig.blockSizeHorizontal! * 3,
+              //   ),
+              // ),
               const SizedBox(
                 height: kPadding24,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      const CircleAvatar(
-                        radius: 20,
-                        backgroundImage: NetworkImage(
-                          'https://blogger.googleusercontent.com/img/a/AVvXsEiRB_dB-wXqJdvt26dkR-vqOXUjacfxAQIgFNMHl_czjMNDOh6VZVc-muCczDKZh-VU0JqUYV1M9h25ZooLGqhVfwexQO6zNY1jxeMDu0-SpfEPe8xkF7re1eldAkKld9Ct1YzesFmHpQK9wlPK330AXA85gsmDBURTQm3i7r08g6vO7KNtAPyDgeUIaQ=s740',
-                        ),
-                        backgroundColor: kBlue,
-                      ),
-                      SizedBox(
-                        width: SizeConfig.blockSizeHorizontal! * 4,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Abdul Aziz Ahwan',
-                            style: kRalewayMedium.copyWith(
-                              color: kBlack,
-                              fontSize: SizeConfig.blockSizeHorizontal! * 4,
-                            ),
-                          ),
-                          SizedBox(
-                            height: SizeConfig.blockSizeVertical! * 0.2,
-                          ),
-                          Text(
-                            'Owner',
-                            style: kRalewayMedium.copyWith(
-                              color: kGrey85,
-                              fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Container(
-                        height: 28,
-                        width: 28,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(kBorderRadius5),
-                          color: kBlue.withOpacity(0.5),
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/icon_phone.svg',
-                        ),
-                      ),
-                      SizedBox(
-                        width: SizeConfig.blockSizeHorizontal! * 4,
-                      ),
-                      Container(
-                        height: 28,
-                        width: 28,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(kBorderRadius5),
-                          color: kBlue.withOpacity(0.5),
-                        ),
-                        child: SvgPicture.asset(
-                          'assets/icon_message.svg',
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-              const SizedBox(
-                height: kPadding24,
-              ),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Row(
+              //       children: [
+              //         const CircleAvatar(
+              //           radius: 20,
+              //           backgroundImage: NetworkImage(
+              //             'https://blogger.googleusercontent.com/img/a/AVvXsEiRB_dB-wXqJdvt26dkR-vqOXUjacfxAQIgFNMHl_czjMNDOh6VZVc-muCczDKZh-VU0JqUYV1M9h25ZooLGqhVfwexQO6zNY1jxeMDu0-SpfEPe8xkF7re1eldAkKld9Ct1YzesFmHpQK9wlPK330AXA85gsmDBURTQm3i7r08g6vO7KNtAPyDgeUIaQ=s740',
+              //           ),
+              //           backgroundColor: kBlue,
+              //         ),
+              //         SizedBox(
+              //           width: SizeConfig.blockSizeHorizontal! * 4,
+              //         ),
+              //         Column(
+              //           crossAxisAlignment: CrossAxisAlignment.start,
+              //           children: [
+              //             Text(
+              //               'Abdul Aziz Ahwan',
+              //               style: kRalewayMedium.copyWith(
+              //                 color: kBlack,
+              //                 fontSize: SizeConfig.blockSizeHorizontal! * 4,
+              //               ),
+              //             ),
+              //             SizedBox(
+              //               height: SizeConfig.blockSizeVertical! * 0.2,
+              //             ),
+              //             Text(
+              //               'Owner',
+              //               style: kRalewayMedium.copyWith(
+              //                 color: kGrey85,
+              //                 fontSize: SizeConfig.blockSizeHorizontal! * 2.5,
+              //               ),
+              //             ),
+              //           ],
+              //         )
+              //       ],
+              //     ),
+              //     Row(
+              //       children: [
+              //         Container(
+              //           height: 28,
+              //           width: 28,
+              //           decoration: BoxDecoration(
+              //             borderRadius: BorderRadius.circular(kBorderRadius5),
+              //             color: kBlue.withOpacity(0.5),
+              //           ),
+              //           child: SvgPicture.asset(
+              //             'assets/icon_phone.svg',
+              //           ),
+              //         ),
+              //         SizedBox(
+              //           width: SizeConfig.blockSizeHorizontal! * 4,
+              //         ),
+              //         Container(
+              //           height: 28,
+              //           width: 28,
+              //           decoration: BoxDecoration(
+              //             borderRadius: BorderRadius.circular(kBorderRadius5),
+              //             color: kBlue.withOpacity(0.5),
+              //           ),
+              //           child: SvgPicture.asset(
+              //             'assets/icon_message.svg',
+              //           ),
+              //         ),
+              //       ],
+              //     )
+              //   ],
+              // ),
+              // const SizedBox(
+              //   height: kPadding24,
+              // ),
               Row(
                 children: [
                   Text(
@@ -434,7 +444,7 @@ class ProductDetailPage extends StatelessWidget {
                   image: const DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
-                      'assets/map_sample.png',
+                      'assets/icones/map_sample.png',
                     ),
                   ),
                 ),

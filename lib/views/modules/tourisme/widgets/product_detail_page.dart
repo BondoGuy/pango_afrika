@@ -1,7 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pango_afrika/views/modules/tourisme/widgets/size_config.dart';
 
 import 'app_styles.dart';
@@ -14,7 +17,7 @@ class ProductDetailPage extends StatelessWidget {
     SizeConfig().init(context);
 
     return Scaffold(
-      appBar: AppBar(),
+      //appBar: AppBar(),
       // floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       // floatingActionButton: Container(
       //   padding:  EdgeInsets.symmetric(
@@ -105,10 +108,10 @@ class ProductDetailPage extends StatelessWidget {
                       color: kBlack.withOpacity(0.1),
                     )
                   ],
-                  image: const DecorationImage(
+                  image:  DecorationImage(
                     fit: BoxFit.cover,
-                    image: NetworkImage(
-                      'https://mod-movers.com/wp-content/uploads/2020/06/webaliser-_TPTXZd9mOo-unsplash-scaled-e1591134904605.jpg',
+                    image: AssetImage(
+                      'assets/icones/paradis-paysage-climatique-coucher-du-soleil-hotel.jpg'
                     ),
                   ),
                 ),
@@ -136,18 +139,27 @@ class ProductDetailPage extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // CircleAvatar(
-                              //   radius: 17,
-                              //   backgroundColor: kBlack.withOpacity(0.24),
-                              //   child: SvgPicture.asset(
-                              //     'assets/icones/icon_arrow_back.svg',
-                              //   ),
-                              // ),
+                              GestureDetector(
+                                onTap: (){
+                                  Get.back();
+                                },
+                                child: CircleAvatar(
+                                  radius: 17,
+                                  backgroundColor: kBlack.withOpacity(0.24),
+                                  child: SvgPicture.asset(
+                                    'assets/icones/icon_arrow_back.svg',
+                                  ),
+                                ),
+                              ),
                               CircleAvatar(
-                                radius: 17,
-                                backgroundColor: kBlack.withOpacity(0.24),
-                                child: SvgPicture.asset(
-                                  'assets/icones/icon_bookmark.svg',
+                                radius: 20,
+                                backgroundColor:kBlack.withOpacity(0.24),
+                                child: Text(
+                                  '18 km',
+                                  style: GoogleFonts.oswald(
+                                    color: kWhite,
+                                    fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                                  ),
                                 ),
                               ),
                             ],
@@ -157,22 +169,14 @@ class ProductDetailPage extends StatelessWidget {
                             children: [
                               Text(
                                 'CHUTE D\'EAUX',
-                                style: kRalewaySemibold.copyWith(
+                                style: GoogleFonts.oswald(
                                   color: kWhite,
                                   fontSize:
                                       SizeConfig.blockSizeHorizontal! * 4.5,
                                 ),
                               ),
-                              SizedBox(
-                                height: SizeConfig.blockSizeVertical! * 0.5,
-                              ),
-                              Text(
-                                '18 km',
-                                style: kRalewayRegular.copyWith(
-                                  color: kWhite,
-                                  fontSize: SizeConfig.blockSizeHorizontal! * 3,
-                                ),
-                              ),
+
+
                               SizedBox(
                                 height: SizeConfig.blockSizeVertical! * 1.5,
                               ),
@@ -193,22 +197,23 @@ class ProductDetailPage extends StatelessWidget {
                                         ),
                                         padding:
                                             const EdgeInsets.all(kPadding4),
-                                        child: SvgPicture.asset(
-                                          'assets/icones/icon_bedroom_white.svg',
-                                        ),
+                                        // child: SvgPicture.asset(
+                                        //   'assets/icones/icon_bedroom_white.svg',
+                                        // ),
+                                        child: Icon(Icons.star, color: Colors.orange,size: 15,),
+                                        //child: Icon(CupertinoIcons.star_circle,size: 15,color: Colors.deepOrangeAccent,),
                                       ),
                                       SizedBox(
                                         width: SizeConfig.blockSizeHorizontal! *
                                             2.5,
                                       ),
-                                      Icon(Icons.star, color: Colors.orange,),
+
                                       Text(
                                         '6 etoiles',
-                                        style: kRalewayRegular.copyWith(
+                                        style: GoogleFonts.oswald(
                                           color: kWhite,
                                           fontSize:
-                                              SizeConfig.blockSizeHorizontal! *
-                                                  3,
+                                              16,
                                         ),
                                       ),
                                     ],
@@ -232,9 +237,10 @@ class ProductDetailPage extends StatelessWidget {
                                         ),
                                         padding:
                                             const EdgeInsets.all(kPadding4),
-                                        child: SvgPicture.asset(
-                                          'assets/icones/icon_bathroom_white.svg',
-                                        ),
+                                        child: Icon(CupertinoIcons.placemark, color: Colors.orange,size: 15,),
+                                        // child: SvgPicture.asset(
+                                        //   'assets/icones/icon_bathroom_white.svg',
+                                        // ),
                                       ),
                                       SizedBox(
                                         width: SizeConfig.blockSizeHorizontal! *
@@ -242,11 +248,10 @@ class ProductDetailPage extends StatelessWidget {
                                       ),
                                       Text(
                                         'Douala',
-                                        style: kRalewayRegular.copyWith(
+                                        style: GoogleFonts.oswald(
                                           color: kWhite,
                                           fontSize:
-                                              SizeConfig.blockSizeHorizontal! *
-                                                  2.5,
+                                              16,
                                         ),
                                       ),
                                     ],
@@ -265,14 +270,16 @@ class ProductDetailPage extends StatelessWidget {
                 height: kPadding24,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Description',
-                    style: kRalewayMedium.copyWith(
+                    style: GoogleFonts.oswald(
                       color: kBlack,
                       fontSize: SizeConfig.blockSizeHorizontal! * 4,
                     ),
-                  )
+                  ), 
+                  Icon(CupertinoIcons.textformat,size: 10,)
                 ],
               ),
               const SizedBox(
@@ -298,9 +305,9 @@ class ProductDetailPage extends StatelessWidget {
               //     fontSize: SizeConfig.blockSizeHorizontal! * 3,
               //   ),
               // ),
-              const SizedBox(
-                height: kPadding24,
-              ),
+              // const SizedBox(
+              //   height: kPadding24,
+              // ),
               // Row(
               //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
               //   children: [
@@ -374,15 +381,19 @@ class ProductDetailPage extends StatelessWidget {
               // const SizedBox(
               //   height: kPadding24,
               // ),
+              // Gallerie
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Gallery',
-                    style: kRalewayMedium.copyWith(
+                    'Galerie',
+                    style: GoogleFonts.oswald(
                       color: kBlack,
                       fontSize: SizeConfig.blockSizeHorizontal! * 4,
                     ),
-                  )
+                  ),
+
+                  Icon(CupertinoIcons.photo_on_rectangle, size: 10,)
                 ],
               ),
               const SizedBox(
@@ -405,8 +416,8 @@ class ProductDetailPage extends StatelessWidget {
                       color: kBlue,
                       image: const DecorationImage(
                         fit: BoxFit.cover,
-                        image: NetworkImage(
-                          'https://mod-movers.com/wp-content/uploads/2020/06/webaliser-_TPTXZd9mOo-unsplash-scaled-e1591134904605.jpg',
+                        image: AssetImage(
+                          'assets/icones/paradis-paysage-climatique-coucher-du-soleil-hotel.jpg',
                         ),
                       ),
                     ),
@@ -419,7 +430,7 @@ class ProductDetailPage extends StatelessWidget {
                         child: index == 4 - 1
                             ? Text(
                                 '+5',
-                                style: kRalewayMedium.copyWith(
+                                style: GoogleFonts.oswald(
                                   color: kWhite,
                                   fontSize: SizeConfig.blockSizeHorizontal! * 5,
                                 ),
@@ -433,34 +444,62 @@ class ProductDetailPage extends StatelessWidget {
               const SizedBox(
                 height: kPadding24,
               ),
-              Container(
-                height: 161,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(kBorderRadius20),
-                  image: const DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(
-                      'assets/icones/map_sample.png',
-                    ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Voir sur la carte',
+                          style: GoogleFonts.oswald(
+                        color: kBlack,
+                        fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                      )),
+                      Icon(CupertinoIcons.map, size: 10,)
+                    ],
                   ),
-                ),
-                child: Stack(
-                  children: [
-                    Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Container(
-                        height: 136,
-                        decoration: BoxDecoration(
-                          borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(kBorderRadius20),
-                            bottomRight: Radius.circular(kBorderRadius20),
-                          ),
-                          gradient: kLinearGradientWhite,
+                  const SizedBox(
+                    height: kPadding24,
+                  ),
+                  Container(
+                    height: 200,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).cardColor,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 10,
+                          spreadRadius: 3,
+                          offset: const Offset(1, 1),
+                          color: Colors.grey.withOpacity(0.2),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(kBorderRadius20),
+                      image: const DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          'assets/icones/map_sample.png',
                         ),
                       ),
                     ),
-                  ],
-                ),
+                    child: Stack(
+                      children: [
+                        Align(
+                          alignment: Alignment.bottomCenter,
+                          child: Container(
+                            height: 136,
+                            decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.only(
+                                bottomLeft: Radius.circular(kBorderRadius20),
+                                bottomRight: Radius.circular(kBorderRadius20),
+                              ),
+                              gradient: kLinearGradientWhite,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: kPadding24,

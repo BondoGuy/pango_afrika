@@ -208,13 +208,27 @@ class ProductDetailPage extends StatelessWidget {
                                         width: 5,
                                       ),
 
-                                      Text(
-                                        '6 avis',
-                                        style: GoogleFonts.oswald(
-                                          color: kWhite,
-                                          fontSize:
+                                      Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            place['avis'],
+                                            style: GoogleFonts.oswald(
+                                              color: kWhite,
+                                              fontSize:
+                                                  16,
+                                            ),
+                                          ),
+                                          SizedBox(width: 3,),
+                                          Text(
+                                            'avis',
+                                            style: GoogleFonts.oswald(
+                                              color: kWhite,
+                                              fontSize:
                                               16,
-                                        ),
+                                            ),
+                                          ),
+                                        ],
                                       ),
 
 
@@ -244,7 +258,7 @@ class ProductDetailPage extends StatelessWidget {
                                         width: 5,
                                       ),
                                       Text(
-                                        'Douala',
+                                        place['town'],
                                         style: GoogleFonts.oswald(
                                           color: kWhite,
                                           fontSize:
@@ -446,10 +460,10 @@ class ProductDetailPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: kBlue,
-                      image:  DecorationImage(
-                        fit: BoxFit.cover,
-                        image:  Image.asset(place['galery'].map((e) => Image.asset(e)).toList()),
-                      ),
+                      // image:  DecorationImage(
+                      //   fit: BoxFit.cover,
+                      //   image:  Image.asset(place['galery'].map((e) => Image.asset(e)).toList()),
+                      // ),
                     ),
                     child: Container(
                       decoration: BoxDecoration(

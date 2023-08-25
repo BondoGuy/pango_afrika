@@ -89,7 +89,7 @@ class ProductDetailPage extends StatelessWidget {
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(
-            horizontal: kPadding20,
+            horizontal: 20,
           ),
           child: Column(
             children: [
@@ -98,7 +98,7 @@ class ProductDetailPage extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(
-                    kBorderRadius20,
+                    20,
                   ),
                   boxShadow: [
                     BoxShadow(
@@ -123,15 +123,15 @@ class ProductDetailPage extends StatelessWidget {
                         height: 200,
                         decoration: BoxDecoration(
                           borderRadius: const BorderRadius.only(
-                            bottomLeft: Radius.circular(kBorderRadius20),
-                            bottomRight: Radius.circular(kBorderRadius20),
+                            bottomLeft: Radius.circular(20),
+                            bottomRight: Radius.circular(20),
                           ),
                           gradient: kLinearGradientBlack,
                         ),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(kPadding20),
+                      padding: const EdgeInsets.all(20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -158,7 +158,7 @@ class ProductDetailPage extends StatelessWidget {
                                   '18 km',
                                   style: GoogleFonts.oswald(
                                     color: kWhite,
-                                    fontSize: SizeConfig.blockSizeHorizontal! * 3,
+                                    fontSize:12,
                                   ),
                                 ),
                               ),
@@ -172,31 +172,30 @@ class ProductDetailPage extends StatelessWidget {
                                 style: GoogleFonts.oswald(
                                   color: kWhite,
                                   fontSize:
-                                      SizeConfig.blockSizeHorizontal! * 4.5,
+                                      16,
                                 ),
                               ),
-
-
                               SizedBox(
-                                height: SizeConfig.blockSizeVertical! * 1.5,
+                                height: 10,
                               ),
                               Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
+
                                     children: [
                                       Container(
-                                        height:
-                                            SizeConfig.blockSizeHorizontal! * 7,
-                                        width:
-                                            SizeConfig.blockSizeHorizontal! * 7,
+                                        // height:
+                                        //     MediaQuery.of(context).size.height/2.5,
+
                                         decoration: BoxDecoration(
                                           color: kWhite.withOpacity(0.2),
                                           borderRadius: BorderRadius.circular(
-                                            kBorderRadius5,
+                                            5,
                                           ),
                                         ),
                                         padding:
-                                            const EdgeInsets.all(kPadding4),
+                                            const EdgeInsets.all(4),
                                         // child: SvgPicture.asset(
                                         //   'assets/icones/icon_bedroom_white.svg',
                                         // ),
@@ -204,12 +203,46 @@ class ProductDetailPage extends StatelessWidget {
                                         //child: Icon(CupertinoIcons.star_circle,size: 15,color: Colors.deepOrangeAccent,),
                                       ),
                                       SizedBox(
-                                        width: SizeConfig.blockSizeHorizontal! *
-                                            2.5,
+                                        width: 5,
                                       ),
 
                                       Text(
-                                        '6 etoiles',
+                                        '6 avis',
+                                        style: GoogleFonts.oswald(
+                                          color: kWhite,
+                                          fontSize:
+                                              16,
+                                        ),
+                                      ),
+
+
+                                    ],
+                                  ),
+                                  Row( 
+                                    children: [
+                                      Container(
+                                        // height:
+                                        //     SizeConfig.blockSizeHorizontal! * 7,
+                                        // width:
+                                        //     SizeConfig.blockSizeHorizontal! * 7,
+                                        decoration: BoxDecoration(
+                                          color: kWhite.withOpacity(0.2),
+                                          borderRadius: BorderRadius.circular(
+                                            5,
+                                          ),
+                                        ),
+                                        padding:
+                                            const EdgeInsets.all(4),
+                                        child: Icon(CupertinoIcons.placemark, color: Colors.orange,size: 15,),
+                                        // child: SvgPicture.asset(
+                                        //   'assets/icones/icon_bathroom_white.svg',
+                                        // ),
+                                      ),
+                                      SizedBox(
+                                        width: 5,
+                                      ),
+                                      Text(
+                                        'Douala',
                                         style: GoogleFonts.oswald(
                                           color: kWhite,
                                           fontSize:
@@ -218,40 +251,35 @@ class ProductDetailPage extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
-                                    width:
-                                        SizeConfig.blockSizeHorizontal! * 7.5,
-                                  ),
                                   Row(
                                     children: [
                                       Container(
-                                        height:
-                                            SizeConfig.blockSizeHorizontal! * 7,
-                                        width:
-                                            SizeConfig.blockSizeHorizontal! * 7,
+                                        // height:
+                                        //     SizeConfig.blockSizeHorizontal! * 7,
+                                        // width:
+                                        //     SizeConfig.blockSizeHorizontal! * 7,
                                         decoration: BoxDecoration(
                                           color: kWhite.withOpacity(0.2),
                                           borderRadius: BorderRadius.circular(
-                                            kBorderRadius5,
+                                            5,
                                           ),
                                         ),
                                         padding:
-                                            const EdgeInsets.all(kPadding4),
-                                        child: Icon(CupertinoIcons.placemark, color: Colors.orange,size: 15,),
+                                        const EdgeInsets.all(4),
+                                        child: Icon(CupertinoIcons.bookmark, color: Colors.orange,size: 15,),
                                         // child: SvgPicture.asset(
                                         //   'assets/icones/icon_bathroom_white.svg',
                                         // ),
                                       ),
                                       SizedBox(
-                                        width: SizeConfig.blockSizeHorizontal! *
-                                            2.5,
+                                        width: 5,
                                       ),
                                       Text(
-                                        'Douala',
+                                        'Favorie',
                                         style: GoogleFonts.oswald(
                                           color: kWhite,
                                           fontSize:
-                                              16,
+                                          16,
                                         ),
                                       ),
                                     ],
@@ -276,7 +304,7 @@ class ProductDetailPage extends StatelessWidget {
                     'Description',
                     style: GoogleFonts.oswald(
                       color: kBlack,
-                      fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                      fontSize: 18,
                     ),
                   ), 
                   Icon(CupertinoIcons.textformat,size: 10,)
@@ -389,7 +417,7 @@ class ProductDetailPage extends StatelessWidget {
                     'Galerie',
                     style: GoogleFonts.oswald(
                       color: kBlack,
-                      fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                      fontSize: 18,
                     ),
                   ),
 
@@ -405,14 +433,14 @@ class ProductDetailPage extends StatelessWidget {
                 shrinkWrap: true,
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 4,
-                  crossAxisSpacing: kPadding16,
+                  crossAxisSpacing: 16,
                   childAspectRatio: 1,
                 ),
                 itemCount: 4,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(kBorderRadius10),
+                      borderRadius: BorderRadius.circular(10),
                       color: kBlue,
                       image: const DecorationImage(
                         fit: BoxFit.cover,
@@ -424,7 +452,7 @@ class ProductDetailPage extends StatelessWidget {
                     child: Container(
                       decoration: BoxDecoration(
                         color: index == 4 - 1 ? kBlack.withOpacity(0.3) : null,
-                        borderRadius: BorderRadius.circular(kBorderRadius10),
+                        borderRadius: BorderRadius.circular(10),
                       ),
                       child: Center(
                         child: index == 4 - 1
@@ -432,7 +460,7 @@ class ProductDetailPage extends StatelessWidget {
                                 '+5',
                                 style: GoogleFonts.oswald(
                                   color: kWhite,
-                                  fontSize: SizeConfig.blockSizeHorizontal! * 5,
+                                  fontSize: 20
                                 ),
                               )
                             : null,
@@ -453,7 +481,7 @@ class ProductDetailPage extends StatelessWidget {
                       Text('Voir sur la carte',
                           style: GoogleFonts.oswald(
                         color: kBlack,
-                        fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                        fontSize: 18,
                       )),
                       Icon(CupertinoIcons.map, size: 10,)
                     ],
@@ -473,7 +501,7 @@ class ProductDetailPage extends StatelessWidget {
                           color: Colors.grey.withOpacity(0.2),
                         )
                       ],
-                      borderRadius: BorderRadius.circular(kBorderRadius20),
+                      borderRadius: BorderRadius.circular(20),
                       image: const DecorationImage(
                         fit: BoxFit.cover,
                         image: AssetImage(
@@ -489,8 +517,8 @@ class ProductDetailPage extends StatelessWidget {
                             height: 136,
                             decoration: BoxDecoration(
                               borderRadius: const BorderRadius.only(
-                                bottomLeft: Radius.circular(kBorderRadius20),
-                                bottomRight: Radius.circular(kBorderRadius20),
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20),
                               ),
                               gradient: kLinearGradientWhite,
                             ),
@@ -502,7 +530,7 @@ class ProductDetailPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: kPadding24,
+                height: 24,
               ),
             ],
           ),

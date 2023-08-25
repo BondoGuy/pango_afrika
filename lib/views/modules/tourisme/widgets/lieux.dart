@@ -27,7 +27,7 @@ class PlacesScreens extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: kPadding20,
+                    horizontal: 20,
                   ),
                   child: Row(
                     children: [
@@ -53,11 +53,11 @@ class PlacesScreens extends StatelessWidget {
                             decoration: InputDecoration(
 
                               contentPadding: const EdgeInsets.symmetric(
-                                horizontal: kPadding16,
+                                horizontal: 16,
                               ),
                               prefixIcon: Padding(
                                 padding: const EdgeInsets.all(
-                                  kPadding8,
+                                  8,
                                 ),
                                 // child: SvgPicture.asset(
                                 //   'assets/icones/icon_search.svg',
@@ -90,7 +90,7 @@ class PlacesScreens extends StatelessWidget {
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           color: AppColors.greenColor,
-                          borderRadius: BorderRadius.circular(kBorderRadius10),
+                          borderRadius: BorderRadius.circular(10),
                           //gradient:
                         ),
                         // child: SvgPicture.asset(
@@ -107,7 +107,7 @@ class PlacesScreens extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: kPadding20,
+                    horizontal: 20,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -116,14 +116,14 @@ class PlacesScreens extends StatelessWidget {
                         'Nos recommandations',
                         style: kRalewayMedium.copyWith(
                           color: kBlack,
-                          //fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                         fontSize: 16,
                         ),
                       ),
                       Text(
                         'Voir plus',
                         style: kRalewayRegular.copyWith(
                           color: kGrey85,
-                          fontSize: 16,
+                          fontSize: 14,
                         ),
                       ),
                     ],
@@ -149,12 +149,12 @@ class PlacesScreens extends StatelessWidget {
                           height: 272,
                           width: 222,
                           margin: EdgeInsets.only(
-                            left: kPadding20,
-                            right: index == 5 - 1 ? kPadding20 : 0,
+                            left: 20,
+                            right: index == 5 - 1 ? 20 : 0,
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(
-                              kBorderRadius20,
+                              20,
                             ),
                             boxShadow: [
                               BoxShadow(
@@ -180,9 +180,9 @@ class PlacesScreens extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     borderRadius: const BorderRadius.only(
                                       bottomLeft:
-                                      Radius.circular(kBorderRadius20),
+                                      Radius.circular(20),
                                       bottomRight:
-                                      Radius.circular(kBorderRadius20),
+                                      Radius.circular(20),
                                     ),
                                     gradient: kLinearGradientBlack,
                                   ),
@@ -192,8 +192,8 @@ class PlacesScreens extends StatelessWidget {
                                 alignment: Alignment.center,
                                 child: Padding(
                                   padding: const EdgeInsets.symmetric(
-                                    horizontal: kPadding16,
-                                    vertical: kPadding20,
+                                    horizontal: 16,
+                                    vertical: 20,
                                   ),
                                   child: Column(
                                     mainAxisAlignment:
@@ -206,15 +206,15 @@ class PlacesScreens extends StatelessWidget {
                                           Container(
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(
-                                                kBorderRadius20,
+                                                20,
                                               ),
                                               color: kBlack.withOpacity(
                                                 0.24,
                                               ),
                                             ),
                                             padding: const EdgeInsets.symmetric(
-                                              horizontal: kPadding8,
-                                              vertical: kPadding4,
+                                              horizontal: 8,
+                                              vertical: 4,
                                             ),
                                             child: Row(
                                               children: [
@@ -284,7 +284,7 @@ class PlacesScreens extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: kPadding20,
+                    horizontal: 20,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -293,14 +293,14 @@ class PlacesScreens extends StatelessWidget {
                         'Decouvertes',
                         style: kRalewayMedium.copyWith(
                           color: kBlack,
-                          //fontSize: SizeConfig.blockSizeHorizontal! * 4,
+                          fontSize: 16,
                         ),
                       ),
                       Text(
                         'voir plus',
                         style: kRalewayRegular.copyWith(
                           color: kGrey85,
-                          fontSize: 16,
+                          fontSize: 14,
                         ),
                       ),
                     ],
@@ -311,7 +311,7 @@ class PlacesScreens extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: kPadding20,
+                    horizontal: 20,
                   ),
                   child: ListView.builder(
                     shrinkWrap: true,
@@ -321,7 +321,18 @@ class PlacesScreens extends StatelessWidget {
                       return Container(
                         height: 70,
                         margin: const EdgeInsets.only(
-                          bottom: kPadding24,
+                          bottom: 24,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).cardColor,
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [BoxShadow(
+                            color: Colors.grey[200]!,
+                            spreadRadius: 1,
+                            blurRadius: 5,
+                            offset: const Offset(
+                              1, 1,), // changes position of shadow
+                          ),],
                         ),
                         child: Row(
                           children: [
@@ -330,15 +341,15 @@ class PlacesScreens extends StatelessWidget {
                               width: 70,
                               decoration: BoxDecoration(
                                 borderRadius:
-                                BorderRadius.circular(kBorderRadius10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    spreadRadius: 0,
-                                    offset: const Offset(0, 18),
-                                    blurRadius: 18,
-                                    color: kBlack.withOpacity(0.1),
-                                  )
-                                ],
+                                BorderRadius.circular(kBorderRadius10!),
+                                // boxShadow: [
+                                //   BoxShadow(
+                                //     spreadRadius: 0,
+                                //     offset: const Offset(0, 18),
+                                //     blurRadius: 18,
+                                //     color: kBlack.withOpacity(0.1),
+                                //   )
+                                // ],
                                 image: const DecorationImage(
                                   fit: BoxFit.cover,
                                   image: AssetImage(
@@ -379,9 +390,6 @@ class PlacesScreens extends StatelessWidget {
                                         Row(
                                           children: [
                                             Icon(CupertinoIcons.placemark),
-                                            // SvgPicture.asset(
-                                            //   'assets/icones/security-pin_6125244.png',
-                                            // ),
                                             SizedBox(
                                               width: 5
                                             ),
@@ -394,27 +402,6 @@ class PlacesScreens extends StatelessWidget {
                                             ),
                                           ],
                                         ),
-                                        SizedBox(
-                                          width:
-                                          10
-                                        ),
-                                        // Row(
-                                        //   children: [
-                                        //     SvgPicture.asset(
-                                        //       'assets/icones/icon_bathroom.svg',
-                                        //     ),
-                                        //     SizedBox(
-                                        //       width: 5
-                                        //     ),
-                                        //     Text(
-                                        //       '4 Bathroom',
-                                        //       style: kRalewayRegular.copyWith(
-                                        //         color: kGrey85,
-                                        //         fontSize: 16
-                                        //       ),
-                                        //     ),
-                                        //   ],
-                                        // ),
                                       ],
                                     ),
                                   ),

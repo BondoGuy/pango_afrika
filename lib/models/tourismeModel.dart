@@ -19,24 +19,52 @@ class Place{
 final List<Map<String, dynamic>> place = [
   {
     "imgUrl": 'assets/images/icones/tourisme.png',
+    "galery": [
+      'assets/img/belle-chaussee-maisons-entourees-champs-herbeux-captures-gambie-afrique.jpg',
+      'assets/img/femme-africaine-versant-eau-dans-recipient.jpg',
+      'assets/img/jeune-touriste-aux-pieds-nus-casquette-baseball-debout-grosse-pierre-regardant-cascade-derriere-lui-dans-belle-nature-exotique-voyageur-barbu-profitant-faune-lors-randonnee-dans-foret-tropicale.jpg',
+      'assets/img/paysages-naturels-africains-vegetation.jpg',
+      'assets/img/paysages-naturels-africains-vegetation (1).jpg'
+    ],
     "localisation": "18 km",
     "town":"Douala",
     "description":"brufbufbuubbuub ububbubefxjmihimx inrubfuihixhh wxwbcubuubemixiimixfbcxicxwxmixi"
   },
   {
     "imgUrl": 'assets/images/icones/tourisme.png',
+    "galery": [
+      'assets/img/belle-chaussee-maisons-entourees-champs-herbeux-captures-gambie-afrique.jpg',
+      'assets/img/femme-africaine-versant-eau-dans-recipient.jpg',
+      'assets/img/jeune-touriste-aux-pieds-nus-casquette-baseball-debout-grosse-pierre-regardant-cascade-derriere-lui-dans-belle-nature-exotique-voyageur-barbu-profitant-faune-lors-randonnee-dans-foret-tropicale.jpg',
+      'assets/img/paysages-naturels-africains-vegetation.jpg',
+      'assets/img/paysages-naturels-africains-vegetation (1).jpg'
+    ],
     "localisation": "180 km",
     "town":"Yaounde",
     "description":"brufbufbuubbuub ububbubefxjmihimx inrubfuihixhh wxwbcubuubemixiimixfbcxicxwxmixi"
   },
   {
     "imgUrl": 'assets/images/icones/tourisme.png',
+    "galery": [
+      'assets/img/belle-chaussee-maisons-entourees-champs-herbeux-captures-gambie-afrique.jpg',
+      'assets/img/femme-africaine-versant-eau-dans-recipient.jpg',
+      'assets/img/jeune-touriste-aux-pieds-nus-casquette-baseball-debout-grosse-pierre-regardant-cascade-derriere-lui-dans-belle-nature-exotique-voyageur-barbu-profitant-faune-lors-randonnee-dans-foret-tropicale.jpg',
+      'assets/img/paysages-naturels-africains-vegetation.jpg',
+      'assets/img/paysages-naturels-africains-vegetation (1).jpg'
+    ],
     "localisation": "50 km",
     "town":"Kribi",
     "description":"brufbufbuubbuub ububbubefxjmihimx inrubfuihixhh wxwbcubuubemixiimixfbcxicxwxmixi"
   },
   {
     "imgUrl": 'assets/images/icones/tourisme.png',
+    "galery": [
+      'assets/img/belle-chaussee-maisons-entourees-champs-herbeux-captures-gambie-afrique.jpg',
+      'assets/img/femme-africaine-versant-eau-dans-recipient.jpg',
+      'assets/img/jeune-touriste-aux-pieds-nus-casquette-baseball-debout-grosse-pierre-regardant-cascade-derriere-lui-dans-belle-nature-exotique-voyageur-barbu-profitant-faune-lors-randonnee-dans-foret-tropicale.jpg',
+      'assets/img/paysages-naturels-africains-vegetation.jpg',
+      'assets/img/paysages-naturels-africains-vegetation (1).jpg'
+    ],
     "localisation": "5 km",
     "town":"Bonapriso",
     "description":"brufbufbuubbuub ububbubefxjmihimx inrubfuihixhh wxwbcubuubemixiimixfbcxicxwxmixi"

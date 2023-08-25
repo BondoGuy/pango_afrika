@@ -62,9 +62,9 @@ Gradient kLinearGradientWhite = LinearGradient(
 
 /* Start of BorderRadius */
 
-const double kBorderRadius20 = 20.0;
-const double kBorderRadius10 = 10.0;
-const double kBorderRadius5 = 5.0;
+const double? kBorderRadius20 = 20.0;
+const double? kBorderRadius10 = 10.0;
+const double? kBorderRadius5 = 5.0;
 
 /* End of BorderRadius */
 
@@ -72,12 +72,12 @@ const double kBorderRadius5 = 5.0;
 
 /* Start of Padding */
 
-const double kPadding32 = 32.0;
-const double kPadding24 = 24.0;
-const double kPadding20 = 20.0;
-const double kPadding16 = 16.0;
-const double kPadding8 = 8.0;
-const double kPadding4 = 4.0;
+const double? kPadding32 = 32.0;
+const double? kPadding24 = 24.0;
+const double? kPadding20 = 20.0;
+const double? kPadding16 = 16.0;
+const double? kPadding8 = 8.0;
+const double? kPadding4 = 4.0;
 
 /* End of Padding */
 
@@ -86,7 +86,7 @@ const double kPadding4 = 4.0;
 /* Start of Input Style */
 
 final kInputBorder = OutlineInputBorder(
-  borderRadius: BorderRadius.circular(kBorderRadius10),
+  borderRadius: BorderRadius.circular(kBorderRadius10!),
   borderSide: const BorderSide(
     color: kWhite,
   ),
@@ -99,19 +99,19 @@ final kInputBorder = OutlineInputBorder(
 /* Start of Font */
 
 
-final kRalewayBold = GoogleFonts.raleway(
+final kRalewayBold = GoogleFonts.oswald(
   fontWeight: FontWeight.w700,
 );
 
-final kRalewaySemibold = GoogleFonts.raleway(
+final kRalewaySemibold = GoogleFonts.oswald(
   fontWeight: FontWeight.w600,
 );
 
-final kRalewayMedium = GoogleFonts.raleway(
+final kRalewayMedium = GoogleFonts.oswald(
   fontWeight: FontWeight.w500,
 );
 
-final kRalewayRegular = GoogleFonts.raleway(
+final kRalewayRegular = GoogleFonts.oswald(
   fontWeight: FontWeight.w400,
 );
 

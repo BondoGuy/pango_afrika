@@ -7,14 +7,16 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pango_afrika/views/modules/tourisme/widgets/size_config.dart';
 
+import '../../../../models/tourismeModel.dart';
 import 'app_styles.dart';
 
 class ProductDetailPage extends StatelessWidget {
-  const ProductDetailPage({Key? key}) : super(key: key);
+  const ProductDetailPage({Key? key, required this.place}) : super(key: key);
+  final Map<String, dynamic> place;
 
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
+
 
     return Scaffold(
       //appBar: AppBar(),
@@ -108,10 +110,10 @@ class ProductDetailPage extends StatelessWidget {
                       color: kBlack.withOpacity(0.1),
                     )
                   ],
-                  image:  DecorationImage(
+                  image:   DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
-                      'assets/icones/paradis-paysage-climatique-coucher-du-soleil-hotel.jpg'
+                        place['imgUrl']
                     ),
                   ),
                 ),
@@ -155,7 +157,7 @@ class ProductDetailPage extends StatelessWidget {
                                 radius: 20,
                                 backgroundColor:kBlack.withOpacity(0.24),
                                 child: Text(
-                                  '18 km',
+                                  place['localisation'],
                                   style: GoogleFonts.oswald(
                                     color: kWhite,
                                     fontSize:12,
@@ -168,7 +170,7 @@ class ProductDetailPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'CHUTE D\'EAUX',
+                                place['title'],
                                 style: GoogleFonts.oswald(
                                   color: kWhite,
                                   fontSize:
@@ -300,14 +302,16 @@ class ProductDetailPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Description',
-                    style: GoogleFonts.oswald(
-                      color: kBlack,
-                      fontSize: 18,
+                  Expanded(
+                    child: Text(
+                      place['description'],
+                      style: GoogleFonts.oswald(
+                        color: kBlack,
+                        fontSize: 18,
+                      ),
                     ),
-                  ), 
-                  Icon(CupertinoIcons.textformat,size: 10,)
+                  ),
+                  //Icon(CupertinoIcons.textformat,size: 10,)
                 ],
               ),
               const SizedBox(
@@ -442,11 +446,9 @@ class ProductDetailPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: kBlue,
-                      image: const DecorationImage(
+                      image:  DecorationImage(
                         fit: BoxFit.cover,
-                        image: AssetImage(
-                          'assets/icones/paradis-paysage-climatique-coucher-du-soleil-hotel.jpg',
-                        ),
+                        image:  Image.asset(place['galery'].map((e) => Image.asset(e)).toList()),
                       ),
                     ),
                     child: Container(

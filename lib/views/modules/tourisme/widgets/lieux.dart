@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 //import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,6 +9,7 @@ import 'package:pango_afrika/views/modules/tourisme/widgets/product_detail_page.
 import 'package:pango_afrika/views/modules/tourisme/widgets/size_config.dart';
 
 
+import '../../../../models/tourismeModel.dart';
 import 'app_styles.dart';
 
 class PlacesScreens extends StatelessWidget {
@@ -136,13 +138,13 @@ class PlacesScreens extends StatelessWidget {
                   height: 272,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 5,
+                    itemCount: places.length,
                     itemBuilder: (context, index) {
                       return GestureDetector(
                         onTap: (() => Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ProductDetailPage(),
+                            builder: (context) =>  ProductDetailPage(place: places[index]),
                           ),
                         )),
                         child: Container(
@@ -164,10 +166,10 @@ class PlacesScreens extends StatelessWidget {
                                 color: kBlack.withOpacity(0.1),
                               )
                             ],
-                            image: const DecorationImage(
+                            image:  DecorationImage(
                               fit: BoxFit.cover,
                               image: AssetImage(
-                                'assets/icones/paradis-paysage-climatique-coucher-du-soleil-hotel.jpg',
+                                "${places.elementAt(index)['imgUrl']}",
                               ),
                             ),
                           ),
@@ -225,7 +227,7 @@ class PlacesScreens extends StatelessWidget {
                                                   width: kPadding4,
                                                 ),
                                                 Text(
-                                                  '1.8 km',
+                                                  "${places.elementAt(index)['localisation']}",
                                                   style: kRalewayRegular.copyWith(
                                                     color: kWhite,
                                                     fontSize: 16
@@ -241,28 +243,44 @@ class PlacesScreens extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'Rond point Deido',
+                                            "${places.elementAt(index)['title']}",
                                             style: kRalewayMedium.copyWith(
                                               color: kWhite,
                                               fontSize: 14,
                                             ),
                                           ),
-                                          SizedBox(
+                                          const SizedBox(
                                             height:
                                             5
                                           ),
                                           Row(
                                             children: [
-                                              Icon(CupertinoIcons.placemark, size: 15,color: Colors.deepOrangeAccent,),
-                                              SizedBox(
+                                              Icon(CupertinoIcons.placemark, size: 15,color: AppColors.greenColor),
+                                              const SizedBox(
                                                   width: 5
                                               ),
-                                              Text(
-                                                'Douala, Cameroun',
-                                                style: GoogleFonts.oswald(
-                                                  color: kWhite,
-                                                  fontSize: 12
-                                                ),
+                                              Row(
+                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    "${places.elementAt(index)['town']}",
+                                                    style: GoogleFonts.oswald(
+                                                      color: kWhite,
+                                                      fontSize: 12
+                                                    ),
+                                                  ),
+                                                  Text(', ', style: GoogleFonts.oswald(
+                                                      color: kWhite,
+                                                      fontSize: 12
+                                                  ),),
+                                                  Text(
+                                                    "${places.elementAt(index)['lands']}",
+                                                    style: GoogleFonts.oswald(
+                                                        color: kWhite,
+                                                        fontSize: 12
+                                                    ),
+                                                  ),
+                                                ],
                                               ),
                                             ],
                                           )
@@ -316,7 +334,7 @@ class PlacesScreens extends StatelessWidget {
                   child: ListView.builder(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    itemCount: 8,
+                    itemCount: places.length,
                     itemBuilder: (context, index) {
                       return Container(
                         height: 70,
@@ -350,11 +368,9 @@ class PlacesScreens extends StatelessWidget {
                                 //     color: kBlack.withOpacity(0.1),
                                 //   )
                                 // ],
-                                image: const DecorationImage(
+                                image:  DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: AssetImage(
-                                    'assets/icones/paradis-paysage-climatique-coucher-du-soleil-hotel.jpg',
-                                  ),
+                                  image: AssetImage("${places.elementAt(index)['imgUrl']}"),
                                 ),
                               ),
                             ),
@@ -367,17 +383,17 @@ class PlacesScreens extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Text(
-                                    'Douala',
+                                    "${places.elementAt(index)['title']}",
                                     style: kRalewayMedium.copyWith(
                                       color: kBlack,
                                      fontSize:16
                                     ),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     //height: SizeConfig.blockSizeVertical! * 0.5,
                                   ),
                                   Text(
-                                    'Cameroun',
+                                      "${places.elementAt(index)['lands']}",
                                     style: kRalewayRegular.copyWith(
                                       color: kBlue,
                                       fontSize: 12
@@ -390,11 +406,11 @@ class PlacesScreens extends StatelessWidget {
                                         Row(
                                           children: [
                                             Icon(CupertinoIcons.placemark),
-                                            SizedBox(
+                                            const SizedBox(
                                               width: 5
                                             ),
                                             Text(
-                                              '1 km',
+                                              "${places.elementAt(index)['localisation']}",
                                               style: kRalewayRegular.copyWith(
                                                 color: kGrey85,
                                                 fontSize: 12
@@ -408,6 +424,17 @@ class PlacesScreens extends StatelessWidget {
                                 ],
                               ),
                             ),
+                               GestureDetector(
+                                 onTap: (){
+                                   share_text('EIMNBOERNGIERNIGNERIGNIRENGIEINGIEIGN');
+                                 },
+                                 child: Container(
+                                   //color: Colors.lightBlue,
+                                   width: 50,
+                                   height: 50,
+                                   child: Center(child: Icon(CupertinoIcons.share, )),
+                                 ),
+                               )
                           ],
                         ),
                       );
@@ -420,5 +447,11 @@ class PlacesScreens extends StatelessWidget {
         ),
       ),
     );
+  }
+  static const _channel = MethodChannel("flutter_share_plus");
+  Future<void> share_text(String message) async {
+    await _channel.invokeMethod('share_text',<String, String>{
+      'message':message
+    });
   }
 }

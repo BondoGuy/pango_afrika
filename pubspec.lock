@@ -198,6 +198,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.9"
+  flutter_share_plus:
+    dependency: "direct main"
+    description:
+      name: flutter_share_plus
+      sha256: "1ff797e10216ce7f88f49689e015f415ebe6aec403031f1be8ca289eb950ba98"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.7"
   flutter_spinkit:
     dependency: transitive
     description:

@@ -1,11 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:pango_afrika/categorie/categories.dart';
 import 'package:pango_afrika/utils/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pango_afrika/widgets/big_text.dart';
 
-import '../../data/imagedata.dart';
+import '../../categorie/Tourisme.dart';
+import '../../models/banner.dart';
+
+
 
 
 class HomeScreen extends StatefulWidget {
@@ -125,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
           ),
-          Categories()
+          Tourisme(),
         ],
       )
     );

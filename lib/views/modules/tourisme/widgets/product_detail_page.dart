@@ -5,6 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pango_afrika/utils/colors.dart';
 import 'package:pango_afrika/views/modules/tourisme/widgets/size_config.dart';
 
 import '../../../../models/tourismeModel.dart';
@@ -201,7 +202,7 @@ class ProductDetailPage extends StatelessWidget {
                                         // child: SvgPicture.asset(
                                         //   'assets/icones/icon_bedroom_white.svg',
                                         // ),
-                                        child: Icon(Icons.star, color: Colors.orange,size: 15,),
+                                        child: Icon(Icons.star, color: AppColors.greenColor,size: 15,),
                                         //child: Icon(CupertinoIcons.star_circle,size: 15,color: Colors.deepOrangeAccent,),
                                       ),
                                       const SizedBox(
@@ -249,7 +250,7 @@ class ProductDetailPage extends StatelessWidget {
                                         ),
                                         padding:
                                             const EdgeInsets.all(4),
-                                        child: Icon(CupertinoIcons.placemark, color: Colors.orange,size: 15,),
+                                        child: Icon(CupertinoIcons.placemark, color: AppColors.greenColor,size: 15,),
                                         // child: SvgPicture.asset(
                                         //   'assets/icones/icon_bathroom_white.svg',
                                         // ),
@@ -282,7 +283,7 @@ class ProductDetailPage extends StatelessWidget {
                                         ),
                                         padding:
                                         const EdgeInsets.all(4),
-                                        child: Icon(CupertinoIcons.bookmark, color: Colors.orange,size: 15,),
+                                        child: Icon(CupertinoIcons.bookmark, color: AppColors.greenColor,size: 15,),
                                         // child: SvgPicture.asset(
                                         //   'assets/icones/icon_bathroom_white.svg',
                                         // ),

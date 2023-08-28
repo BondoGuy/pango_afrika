@@ -33,7 +33,7 @@ final List<Map<String, dynamic>> places = [
     ],
     "localisation": "18 km",
     "town":"Douala",
-    "description":"brufbufbuubbuub ububbubefxjmihimx inrubfuihixhh wxwbcubuubemixiimixfbcxicxwxmixi"
+    "description":"Vous pouvez personnaliser la barre de recherche en modifiant le code. Par exemple, vous pouvez ajouter des options de filtre supplémentaires, ou modifier l'apparence de la barre de recherche."
   },
   {
     "title": "Vue sur X1",
@@ -49,7 +49,7 @@ final List<Map<String, dynamic>> places = [
     ],
     "localisation": "180 km",
     "town":"Yaounde",
-    "description":"brufbufbuubbuub ububbubefxjmihimx inrubfuihixhh wxwbcubuubemixiimixfbcxicxwxmixi"
+    "description":"La barre de recherche intègre également deux filtres : un filtre de lieu et un filtre de distance. Le filtre de lieu permet à l'utilisateur de ne voir que les résultats correspondant à un lieu particulier. Le filtre de distance permet à l'utilisateur de ne voir que les résultats situés à une distance maximale donnée.Vous pouvez personnaliser la barre de recherche en modifiant le code. Par exemple, vous pouvez ajouter des options de filtre supplémentaires, ou modifier l'apparence de la barre de recherche."
   },
   {
     "title": "Vue sur X2",
@@ -64,7 +64,7 @@ final List<Map<String, dynamic>> places = [
     "lands":"Senegal",
     "localisation": "50 km",
     "town":"Kribi",
-    "description":"brufbufbuubbuub ububbubefxjmihimx inrubfuihixhh wxwbcubuubemixiimixfbcxicxwxmixi"
+    "description":"La barre de recherche intègre également deux filtres : un filtre de lieu et un filtre de distance. Le filtre de lieu permet à l'utilisateur de ne voir que les résultats correspondant à un lieu particulier. Le filtre de distance permet à l'utilisateur de ne voir que les résultats situés à une distance maximale donnée."
   },
   {
     "title": "Vue sur X3",
@@ -79,12 +79,12 @@ final List<Map<String, dynamic>> places = [
     "localisation": "5 km",
     "town":"Bonapriso",
     "lands":"Burkina Faso",
-    "description":"brufbufbuubbuub ububbubefxjmihimx inrubfuihixhh wxwbcubuubemixiimixfbcxicxwxmixi"
+    "description":"La barre de recherche intègre également deux filtres : un filtre de lieu et un filtre de distance. Le filtre de lieu permet à l'utilisateur de ne voir que les résultats correspondant à un lieu particulier. Le filtre de distance permet à l'utilisateur de ne voir que les résultats situés à une distance maximale donnée."
   },
 ];
-List<String> categories = [
+List<String> list = [
   "Hotels",
   "Lieux Historiques",
-  "Mqrcher artisanal",
+  "Marcher artisanal",
   "Decouverte culinaire",
 ];

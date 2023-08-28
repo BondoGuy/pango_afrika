@@ -9,14 +9,23 @@ import 'package:pango_afrika/views/modules/tourisme/widgets/product_detail_page.
 import 'package:pango_afrika/views/modules/tourisme/widgets/size_config.dart';
 
 
+import '../../../../models/Categories.dart';
 import '../../../../models/tourismeModel.dart';
 import 'app_styles.dart';
 
-class PlacesScreens extends StatelessWidget {
+class PlacesScreens extends StatefulWidget {
   const PlacesScreens({super.key});
 
   @override
+  State<PlacesScreens> createState() => _PlacesScreensState();
+
+  static const _channel = MethodChannel("flutter_share_plus");
+}
+
+class _PlacesScreensState extends State<PlacesScreens> {
+  @override
   Widget build(BuildContext context) {
+    int current = 0;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -57,8 +66,8 @@ class PlacesScreens extends StatelessWidget {
                               contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 16,
                               ),
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.all(
+                              prefixIcon: const Padding(
+                                padding: EdgeInsets.all(
                                   8,
                                 ),
                                 // child: SvgPicture.asset(
@@ -86,24 +95,84 @@ class PlacesScreens extends StatelessWidget {
                         width: 10,
 
                       ),
-                      Container(
-                        height: 49,
-                        width: 49,
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: AppColors.greenColor,
-                          borderRadius: BorderRadius.circular(10),
-                          //gradient:
+                      GestureDetector(
+                        child: Container(
+                          height: 49,
+                          width: 49,
+                          padding: const EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: AppColors.greenColor,
+                            borderRadius: BorderRadius.circular(10),
+                            //gradient:
+                          ),
+                          // child: SvgPicture.asset(
+                          //   'assets/icones/icon_filter.svg',
+                          // ),
+                          child: Icon(Icons.filter_list_rounded,color: Colors.white,),
                         ),
-                        // child: SvgPicture.asset(
-                        //   'assets/icones/icon_filter.svg',
-                        // ),
-                        child: Icon(Icons.filter_list_rounded,color: Colors.white,),
                       )
                     ],
                   ),
                 ),
-
+                const SizedBox(
+                  height: kPadding24,
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  height: 34,
+                  child: ListView.builder(
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: tourisme.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            current = index;
+                          });
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(
+                            left: index == 0 ? 20 : 12,
+                            right:
+                            index == tourisme.length - 1 ? 20 : 0,
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 16,
+                          ),
+                          height: 34,
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                spreadRadius: 0,
+                                offset: const Offset(0, 18),
+                                blurRadius: 18,
+                                color: current == index
+                                    ? AppColors.greenColor.withOpacity(0)
+                                    : Theme.of(context).cardColor.withOpacity(0.1),
+                              )
+                            ],
+                            gradient: current == index
+                                ? kLinearGradientBlue
+                                : kLinearGradientWhite,
+                            borderRadius: BorderRadius.circular(
+                              10,
+                            ),
+                          ),
+                          child: Center(
+                            child: Text(
+                              list[index],
+                              style: kRalewayMedium.copyWith(
+                                color: current == index ? kWhite : kGrey85,
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
                 const SizedBox(
                   height: kPadding24,
                 ),
@@ -328,7 +397,7 @@ class PlacesScreens extends StatelessWidget {
                   height: kPadding24,
                 ),
                 Padding(
-                  padding: const EdgeInsets.symmetric(
+                  padding:  EdgeInsets.symmetric(
                     horizontal: 20,
                   ),
                   child: ListView.builder(
@@ -336,106 +405,114 @@ class PlacesScreens extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: places.length,
                     itemBuilder: (context, index) {
-                      return Container(
-                        height: 70,
-                        margin: const EdgeInsets.only(
-                          bottom: 24,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).cardColor,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [BoxShadow(
-                            color: Colors.grey[200]!,
-                            spreadRadius: 1,
-                            blurRadius: 5,
-                            offset: const Offset(
-                              1, 1,), // changes position of shadow
-                          ),],
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              height: 70,
-                              width: 70,
-                              decoration: BoxDecoration(
-                                borderRadius:
-                                BorderRadius.circular(kBorderRadius10!),
-                                // boxShadow: [
-                                //   BoxShadow(
-                                //     spreadRadius: 0,
-                                //     offset: const Offset(0, 18),
-                                //     blurRadius: 18,
-                                //     color: kBlack.withOpacity(0.1),
-                                //   )
-                                // ],
-                                image:  DecorationImage(
-                                  fit: BoxFit.cover,
-                                  image: AssetImage("${places.elementAt(index)['imgUrl']}"),
+                      return GestureDetector(
+                        onTap: (() => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>  ProductDetailPage(place: places[index]),
+                          ),
+                        )),
+                        child: Container(
+                          height: 70,
+                          margin: const EdgeInsets.only(
+                            bottom: 24,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).cardColor,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [BoxShadow(
+                              color: Colors.grey[200]!,
+                              spreadRadius: 1,
+                              blurRadius: 5,
+                              offset: const Offset(
+                                1, 1,), // changes position of shadow
+                            ),],
+                          ),
+                          child: Row(
+                            children: [
+                              Container(
+                                height: 70,
+                                width: 70,
+                                decoration: BoxDecoration(
+                                  borderRadius:
+                                  BorderRadius.circular(kBorderRadius10!),
+                                  // boxShadow: [
+                                  //   BoxShadow(
+                                  //     spreadRadius: 0,
+                                  //     offset: const Offset(0, 18),
+                                  //     blurRadius: 18,
+                                  //     color: kBlack.withOpacity(0.1),
+                                  //   )
+                                  // ],
+                                  image:  DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: AssetImage("${places.elementAt(index)['imgUrl']}"),
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              width: 5
-                            ),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "${places.elementAt(index)['title']}",
-                                    style: kRalewayMedium.copyWith(
-                                      color: kBlack,
-                                     fontSize:16
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    //height: SizeConfig.blockSizeVertical! * 0.5,
-                                  ),
-                                  Text(
-                                      "${places.elementAt(index)['lands']}",
-                                    style: kRalewayRegular.copyWith(
-                                      color: kBlue,
-                                      fontSize: 12
-                                      //SizeConfig.blockSizeHorizontal! * 2.5,
-                                    ),
-                                  ),
-                                  Expanded(
-                                    child: Row(
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Icon(CupertinoIcons.placemark),
-                                            const SizedBox(
-                                              width: 5
-                                            ),
-                                            Text(
-                                              "${places.elementAt(index)['localisation']}",
-                                              style: kRalewayRegular.copyWith(
-                                                color: kGrey85,
-                                                fontSize: 12
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                              SizedBox(
+                                width: 5
                               ),
-                            ),
-                               GestureDetector(
-                                 onTap: (){
-                                   share_text('EIMNBOERNGIERNIGNERIGNIRENGIEINGIEIGN');
-                                 },
-                                 child: Container(
-                                   //color: Colors.lightBlue,
-                                   width: 50,
-                                   height: 50,
-                                   child: Center(child: Icon(CupertinoIcons.share, )),
-                                 ),
-                               )
-                          ],
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "${places.elementAt(index)['title']}",
+                                      style: kRalewayMedium.copyWith(
+                                        color: kBlack,
+                                       fontSize:16
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      //height: SizeConfig.blockSizeVertical! * 0.5,
+                                    ),
+                                    Text(
+                                        "${places.elementAt(index)['lands']}",
+                                      style: kRalewayRegular.copyWith(
+                                        color: kBlue,
+                                        fontSize: 12
+                                        //SizeConfig.blockSizeHorizontal! * 2.5,
+                                      ),
+                                    ),
+                                    Expanded(
+                                      child: Row(
+                                        children: [
+                                          Row(
+                                            children: [
+                                              Icon(CupertinoIcons.placemark),
+                                              const SizedBox(
+                                                width: 5
+                                              ),
+                                              Text(
+                                                "${places.elementAt(index)['localisation']}",
+                                                style: kRalewayRegular.copyWith(
+                                                  color: kGrey85,
+                                                  fontSize: 12
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                                 GestureDetector(
+                                   onTap: (){
+                                     share_text('EIMNBOERNGIERNIGNERIGNIRENGIEINGIEIGN');
+                                   },
+                                   child: Container(
+                                     //color: Colors.lightBlue,
+                                     width: 50,
+                                     height: 50,
+                                     child: Center(child: Icon(CupertinoIcons.share, )),
+                                   ),
+                                 )
+                            ],
+                          ),
                         ),
                       );
                     },
@@ -448,9 +525,9 @@ class PlacesScreens extends StatelessWidget {
       ),
     );
   }
-  static const _channel = MethodChannel("flutter_share_plus");
+
   Future<void> share_text(String message) async {
-    await _channel.invokeMethod('share_text',<String, String>{
+    await PlacesScreens._channel.invokeMethod('share_text',<String, String>{
       'message':message
     });
   }

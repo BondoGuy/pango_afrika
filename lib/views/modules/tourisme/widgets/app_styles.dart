@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pango_afrika/utils/colors.dart';
 
 /* Start of Color Constants */
 
@@ -40,7 +41,7 @@ const Gradient kLinearGradientBlue = LinearGradient(
   begin: Alignment.topCenter,
   end: Alignment.bottomCenter,
   colors: <Color>[
-    kLightBlue,
+    AppColors.greenColor,
     kBlue,
   ],
   tileMode: TileMode.clamp,

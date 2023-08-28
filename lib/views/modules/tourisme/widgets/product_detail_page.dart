@@ -204,7 +204,7 @@ class ProductDetailPage extends StatelessWidget {
                                         child: Icon(Icons.star, color: Colors.orange,size: 15,),
                                         //child: Icon(CupertinoIcons.star_circle,size: 15,color: Colors.deepOrangeAccent,),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         width: 5,
                                       ),
 
@@ -460,10 +460,12 @@ class ProductDetailPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
                       color: kBlue,
-                      // image:  DecorationImage(
-                      //   fit: BoxFit.cover,
-                      //   image:  Image.asset(place['galery'].map((e) => Image.asset(e)).toList()),
-                      // ),
+                      image:  DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage(
+                          places[index]['galery'][index],
+                        ),
+                      ),
                     ),
                     child: Container(
                       decoration: BoxDecoration(

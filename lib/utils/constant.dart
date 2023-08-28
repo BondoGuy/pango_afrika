@@ -7,3 +7,10 @@ Color lightblueshade = const Color(0xFF758CC8);
 Color grayshade = const Color(0xFF9FA4AF);
 Color lightblue = const Color(0xFF4B68D1);
 Color blackshade = const Color(0xFF555555);
+
+const kTextColor = Color(0xFF535353);
+const kTextLightColor = Color(0xFFACACAC);
+
+const kDefaultPaddin = 20.0;
+const kMainColor = Color(0xFF22A699);
+const kMainDarkColor = Color(0xFFC7051A);

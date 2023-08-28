@@ -6,6 +6,7 @@ import 'package:pango_afrika/utils/colors.dart';
 import 'package:pango_afrika/views/modules/tourisme/Module_cat.dart';
 import 'package:pango_afrika/widgets/big_text.dart';
 import '../models/Categories.dart';
+import '../views/modules/artisanat/artisanat.dart';
 import '../views/modules/tourisme/widgets/lieux.dart';
 
 class Tourisme extends StatelessWidget {
@@ -72,45 +73,50 @@ class Tourisme extends StatelessWidget {
                 width: 15,
               ),
               //Qrtrisanat
-              Container(
-                height: 200,
-                width: 180,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 10,
-                      spreadRadius: 3,
-                      offset: const Offset(1, 1),
-                      color: Colors.grey.withOpacity(0.2),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(
-                    16.0,
+              GestureDetector(
+                onTap: (){
+                  Get.to(Artisanat());
+                },
+                child: Container(
+                  height: 200,
+                  width: 180,
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 10,
+                        spreadRadius: 3,
+                        offset: const Offset(1, 1),
+                        color: Colors.grey.withOpacity(0.2),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(
+                      16.0,
+                    ),
+                    color: Theme.of(context).cardColor,
                   ),
-                  color: Theme.of(context).cardColor,
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 150,
-                      decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(16.0),
-                            topRight: Radius.circular(16.0),
-                          ),
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  'assets/images/icones/poterie (1).png'),
-                              fit: BoxFit.fitHeight)),
-                    ),
-                    Container(
-                      height: 50,
-                      child: BigText(
-                        text: 'Artisanat',
-                        size: 25,
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 150,
+                        decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(16.0),
+                              topRight: Radius.circular(16.0),
+                            ),
+                            image: DecorationImage(
+                                image: AssetImage(
+                                    'assets/images/icones/poterie (1).png'),
+                                fit: BoxFit.fitHeight)),
                       ),
-                    ),
-                  ],
+                      Container(
+                        height: 50,
+                        child: BigText(
+                          text: 'Artisanat',
+                          size: 25,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

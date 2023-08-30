@@ -16,7 +16,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-          horizontal: kDefaultPaddin / 2, vertical: kDefaultPaddin / 4),
+          horizontal: kDefaultPaddin / 2),
       child: GestureDetector(
         onTap: press,
         child: Stack(
@@ -26,12 +26,12 @@ class ItemCard extends StatelessWidget {
               children: <Widget>[
                 Container(
                   padding: const EdgeInsets.all(kDefaultPaddin / 2),
-                  height: 180,
+                  height: 200,
                   width: 160,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: kTextColor,
                         spreadRadius: 0.1,
@@ -41,9 +41,10 @@ class ItemCard extends StatelessWidget {
                     ],
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        height: 125,
+                        height: 130,
                         child: Hero(
                           tag: "${product.id}",
                           child: Image.asset(product.image),

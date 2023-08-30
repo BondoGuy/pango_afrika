@@ -64,64 +64,37 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              //height: 200,
-              width: MediaQuery.of(context).size.width / 1,
-              child: CarouselSlider.builder(
-                options: CarouselOptions(
-                  enlargeCenterPage: true,
-                  pauseAutoPlayOnManualNavigate: true,
-                  autoPlay: true,
-                  viewportFraction: 0.8,
-                  autoPlayInterval: const Duration(seconds: 2),
-                  autoPlayAnimationDuration: const Duration(milliseconds: 1000),
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                ),
-                itemCount: banner.length,
-                itemBuilder: (BuildContext context, int index, int realIndex) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 5.0,
-                      vertical: 20,
-                    ),
-                    child: Column(
-                      children: [
-                        Container(
-                          //height: MediaQuery.of(context).size.height/7,
-                          height: 100,
-                          width: MediaQuery.of(context).size.width / 1,
-                          decoration: BoxDecoration(
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey[500]!,
-                                spreadRadius: 1,
-                                blurRadius: 5,
-                                offset: const Offset(
-                                  1,
-                                  1,
-                                ), // changes position of shadow
-                              ),
-                            ],
-                            image: DecorationImage(
-                                image: AssetImage(
-                                    '${banner.elementAt(index)['imgUrl']}'),
-                                fit: BoxFit.cover),
-                            borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(10),
-                                topLeft: Radius.circular(10)),
-                            color: Colors.amber.shade200,
-                          ),
-                          //child: BigText(text: 'Text',size: 30,color: Colors.white,),
-                        ),
-                        //SizedBox(height: 5,),
-                        Container(
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Container(
+                //height: 200,
+                width: MediaQuery.of(context).size.width / 1,
+                child: CarouselSlider.builder(
+                  options: CarouselOptions(
+                    enlargeCenterPage: true,
+                    pauseAutoPlayOnManualNavigate: true,
+                    autoPlay: true,
+                    viewportFraction: 0.8,
+                    autoPlayInterval: const Duration(seconds: 2),
+                    autoPlayAnimationDuration: const Duration(milliseconds: 1000),
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                  ),
+                  itemCount: banner.length,
+                  itemBuilder: (BuildContext context, int index, int realIndex) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 5.0,
+                        vertical: 20,
+                      ),
+                      child: Column(
+                        children: [
+                          Container(
+                            //height: MediaQuery.of(context).size.height/7,
+                            height: 100,
                             width: MediaQuery.of(context).size.width / 1,
-                            height: 30,
                             decoration: BoxDecoration(
-                              color: Theme.of(context).cardColor,
                               boxShadow: [
                                 BoxShadow(
                                   color: Colors.grey[500]!,
@@ -133,23 +106,52 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ), // changes position of shadow
                                 ),
                               ],
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      '${banner.elementAt(index)['imgUrl']}'),
+                                  fit: BoxFit.cover),
                               borderRadius: BorderRadius.only(
-                                  bottomLeft: Radius.circular(10),
-                                  bottomRight: Radius.circular(10)),
+                                  topRight: Radius.circular(10),
+                                  topLeft: Radius.circular(10)),
+                              color: Colors.amber.shade200,
                             ),
-                            child: Center(
-                                child: BigText(
-                              text: '${banner.elementAt(index)['title']}',
-                              size: 20,
-                            )))
-                      ],
-                    ),
-                  );
-                },
+                            //child: BigText(text: 'Text',size: 30,color: Colors.white,),
+                          ),
+                          //SizedBox(height: 5,),
+                          Container(
+                              width: MediaQuery.of(context).size.width / 1,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context).cardColor,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey[500]!,
+                                    spreadRadius: 1,
+                                    blurRadius: 5,
+                                    offset: const Offset(
+                                      1,
+                                      1,
+                                    ), // changes position of shadow
+                                  ),
+                                ],
+                                borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(10),
+                                    bottomRight: Radius.circular(10)),
+                              ),
+                              child: Center(
+                                  child: BigText(
+                                text: '${banner.elementAt(index)['title']}',
+                                size: 20,
+                              )))
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
-            ),
-            Tourisme(),
-          ],
+              Tourisme(),
+            ],
+          ),
         ));
   }
 }

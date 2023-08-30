@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pango_afrika/utils/constant.dart';
+
+import '../../../../utils/colors.dart';
 
 class Categories extends StatefulWidget {
   @override
@@ -20,7 +23,7 @@ class _CategoriesState extends State<Categories> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
           horizontal: kDefaultPaddin, vertical: kDefaultPaddin),
       child: SizedBox(
         height: 55,
@@ -45,8 +48,8 @@ class _CategoriesState extends State<Categories> {
         child: Container(
           width: 75,
           decoration: BoxDecoration(
-            color: selectedIndex == index ? kMainDarkColor : kMainColor,
-            borderRadius: BorderRadius.all(
+            color: selectedIndex == index ? AppColors.greenColor : Colors.white,
+            borderRadius: const BorderRadius.all(
               Radius.circular(5),
             ),
           ),
@@ -61,10 +64,10 @@ class _CategoriesState extends State<Categories> {
                 padding: const EdgeInsets.all(4.0),
                 child: Text(
                   categories[index],
-                  style: TextStyle(
+                  style: GoogleFonts.oswald(
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
-                    color: selectedIndex == index ? kMainColor : kTextColor,
+                    color: selectedIndex == index ? Colors.white : kTextColor,
                   ),
                 ),
               ),

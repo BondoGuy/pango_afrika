@@ -18,7 +18,7 @@ class Body extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: kMainColor,
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(24),
@@ -37,7 +37,7 @@ class Body extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            productInfo(title: "Brand", product: product.brand),
+                            productInfo(title: "Boutique", product: product.brand),
                             const SizedBox(height: kDefaultPaddin / 2),
                             productInfo(title: "Code", product: product.code),
                             const SizedBox(height: kDefaultPaddin / 2),
@@ -185,14 +185,14 @@ class productInfo extends StatelessWidget {
       children: [
         Text(
           title,
-          style: TextStyle(
-            color: Color(0xFF8B2833),
+          style: const TextStyle(
+            color: Colors.white,
           ),
         ),
         Text(
           product,
           style: TextStyle(
-            color: Color(0xFF8B2833).withOpacity(0.5),
+            color: Color(0xFF8B1421),
           ),
         ),
       ],

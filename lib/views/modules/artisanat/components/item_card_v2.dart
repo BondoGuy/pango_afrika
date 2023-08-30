@@ -15,7 +15,7 @@ class ItemCardV2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
           horizontal: kDefaultPaddin / 2, vertical: kDefaultPaddin / 6),
       child: GestureDetector(
         onTap: press,
@@ -31,7 +31,7 @@ class ItemCardV2 extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
+                    boxShadow: const [
                       BoxShadow(
                         color: kTextColor,
                         spreadRadius: 0.1,

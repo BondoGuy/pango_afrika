@@ -15,8 +15,8 @@ class FavIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 20,
-      width: 20,
+      height: 30,
+      width: 30,
       decoration: BoxDecoration(
         color: product.isfav == "true" ? kMainDarkColor : kTextColor,
         shape: BoxShape.circle,

@@ -22,11 +22,11 @@ class Body extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Populer",
+                  Text("Populaire",
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                  Text("View All ",
-                      style: TextStyle(fontSize: 14, color: kMainDarkColor)),
+                  Text("Voir tout ",
+                      style: TextStyle(fontSize: 14, color: kTextColor)),
                 ],
               ),
             ),
@@ -55,11 +55,11 @@ class Body extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Recommend",
+                  Text("Recommander",
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-                  Text("View All ",
-                      style: TextStyle(fontSize: 14, color: kMainDarkColor)),
+                  Text("Voir tout ",
+                      style: TextStyle(fontSize: 14, color: kTextColor)),
                 ],
               ),
             ),

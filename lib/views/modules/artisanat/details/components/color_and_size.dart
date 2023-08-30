@@ -13,11 +13,11 @@ class ColorAndSize extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        Expanded(
+        const Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const Text("Color"),
+              Text("Color"),
               Row(
                 children: <Widget>[
                   ColorDot(

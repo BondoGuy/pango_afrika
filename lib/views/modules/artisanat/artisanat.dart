@@ -29,6 +29,7 @@ class _ArtisanatState extends State<Artisanat> {
 
   AppBar buildAppBar() {
     return AppBar(
+      automaticallyImplyLeading: true,
       backgroundColor: Colors.white,
       elevation: 5,
       leading: IconButton(

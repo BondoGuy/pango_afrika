@@ -91,13 +91,13 @@ class _BottomBarState extends State<BottomBar> {
       ),
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.app_badge),
-        title: ("Categories"),
+        title: ("Boutiques"),
         activeColorPrimary: AppColors.greenColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(CupertinoIcons.shopping_cart),
-        title: ("Boutiques"),
+        title: ("Panier"),
         activeColorPrimary: AppColors.greenColor,
         inactiveColorPrimary: CupertinoColors.systemGrey,
       ),

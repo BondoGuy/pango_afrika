@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pango_afrika/utils/colors.dart';
 
 import '../../../../utils/constant.dart';
 
@@ -31,15 +34,18 @@ class _UpperBodyState extends State<UpperBody> {
               children: [
                 IconButton(
                   icon: SvgPicture.asset(
-                    "assets/icons/menu.svg",
-                    color: kMainDarkColor,
+                    "assets/icones/icon_arrow_back.svg",
+                    color: Colors.white,
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.back();
+                  },
                 ),
+                // SizedBox(),
                 IconButton(
                   icon: SvgPicture.asset(
                     "assets/icons/cart.svg",
-                    color: kMainDarkColor,
+                    color: Colors.white,
                   ),
                   onPressed: () {},
                 ),
@@ -50,12 +56,13 @@ class _UpperBodyState extends State<UpperBody> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Find your Favorite Items!",
-                  style: GoogleFonts.roboto(
-                    textStyle: TextStyle(
+                  "Trouver vos articles!",
+                  style: GoogleFonts.oswald(
+                    textStyle: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 27,
-                        color: kMainDarkColor),
+                        color: Colors.white,
+                    ),
                   ),
                 ),
               ),
@@ -67,8 +74,8 @@ class _UpperBodyState extends State<UpperBody> {
                   child: Padding(
                     padding: const EdgeInsets.only(right: 10),
                     child: Container(
-                        height: 35,
-                        decoration: BoxDecoration(
+                        height: 45,
+                        decoration: const BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.all(
                             Radius.circular(24),
@@ -85,7 +92,7 @@ class _UpperBodyState extends State<UpperBody> {
                                 "assets/icons/search.svg",
                                 color: kTextColor,
                               ),
-                              contentPadding: EdgeInsets.symmetric(
+                              contentPadding: const EdgeInsets.symmetric(
                                 vertical: 11,
                               ),
                               border: InputBorder.none,
@@ -97,7 +104,7 @@ class _UpperBodyState extends State<UpperBody> {
                 Container(
                   height: 35,
                   width: 35,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     shape: BoxShape.circle,
                   ),
